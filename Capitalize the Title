@@ -1,0 +1,41 @@
+class Solution {
+public:
+    
+    bool checkUpperCondition(string s, int i){ //handle last char and one or two chars
+        if(i== s.size() || i+2== s.size()||i+1== s.size()) return true;
+        if(s[i+1] == ' ' || s[i+2] == ' '  ) return true;
+        
+        return false;
+    }
+    string capitalizeTitle(string s) {
+
+
+        for(int i=0; i<s.size(); i++)
+        {
+
+//all lower
+        if(s[i]>=65 && s[i]<=90){  //A== 65, Z==90
+          s[i] = s[i]+32;  //a=97
+        }
+
+
+
+        int len = s.size();
+        if(len>3 && i==0 && s[i+2] == ' '){}
+        else if(len>=3 && i==0 && s[i+1]!=' '){s[i] = s[i]-32;}
+
+
+        else 
+            {
+                if(i!=0 && s[i-1] ==' '){
+                  bool b= (!checkUpperCondition(s,i)); //false means need to add upper 
+                  if(b) s[i] = s[i]-32;
+                }               
+            
+            }
+           
+        }
+        return s;
+        
+    }
+};
