@@ -1,0 +1,20 @@
+public static List<Integer> rotateLeft(int d, List<Integer> arr) {
+   
+    Integer n= arr.size();
+    
+    Integer temp[] = new Integer[d]; 
+    
+    
+    for(int i=0; i<d; i++){
+      temp[i]=arr.get(i);  //1234 - 56789
+    }
+    
+    for(int j=d;j<n;j++){ //copy rest in array first positions 56789
+      
+      arr.set(j-d,arr.get(j) );
+    }
+    
+    for(int k=0; k<d; k++){ // copy from temp
+      
+      arr.set(k+n-d,temp[k]);
+    }
