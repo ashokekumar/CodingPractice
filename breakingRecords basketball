@@ -1,0 +1,13 @@
+ public static List<Integer> breakingRecords(List<Integer> scores) {
+    
+    int min=Integer.MIN_VALUE,max=0,cmin=0,cmax=0;
+    for (Integer sc : scores) {
+      
+      if(min<0) {min=sc; max=sc; continue;}
+      
+      if(sc<min) {cmin++; min=sc;}
+      else if(sc>max){cmax++; max=sc;}
+      
+      
+    }
+    
