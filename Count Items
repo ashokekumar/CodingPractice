@@ -1,0 +1,20 @@
+	public static void CountItem(int i, int j,String arr) {
+		
+		   String str = arr;//"|**|*|*";
+
+		    String sub = str.substring(i-1,j);
+		    int s = sub.indexOf('|');
+		    int e = sub.lastIndexOf('|');
+		    System.out.println(s+" "+e);
+		    System.out.println(sub.substring(s,e).replace("|", "").length());
+	}
+	
+	// driver program to test above function
+	public static void main(String args[])
+	{
+		//NQueenProblem Queen = new NQueenProblem();
+		//Queen.solveNQ();
+		
+		String s="*|**|*|**|****|*";
+		CountItem(1,16,s);
+/*
